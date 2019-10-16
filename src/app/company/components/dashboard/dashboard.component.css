@@ -1,0 +1,10 @@
+.companyPhoto{
+    width: 100%;
+    height: 500px;
+}
+@media screen and (max-width: 700px) {
+    .companyPhoto{
+        width: 100%;
+        height: 300px;
+    }
+  }

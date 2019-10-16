@@ -1,0 +1,70 @@
+<div class="container"fxLayout  fxLayoutAlign="center" >
+  <div class="item-1" fxFlex="0%"></div>
+  <div class="item-2" fxFlex="100%">
+    <!-- <a mat-button [routerLink]="'/dashboard'" class="btn"><i class="material-icons">dashboard</i> Dashboard</a> -->
+    <a mat-button  (click)="openAddEmployeeDialog()" class="btn"><i class="material-icons">person_add</i>Add Employees</a>
+  </div>
+  <div class="item-3" fxFlex="0%"></div>
+</div>
+
+
+<div fxLayout fxLayoutAlign="center" >
+  <mat-form-field appearance="outline" style="width: 80%; padding: 2% ;">
+    <mat-label style="color:rgb(28, 139, 130)">Search for Employee info</mat-label>
+    <input matInput  (keyup)="applyFilter($event.target.value)" placeholder="Filter here" >
+    <mat-icon matSuffix><i class="material-icons">search</i></mat-icon>
+  </mat-form-field>
+</div>
+    
+
+
+<div  fxLayout fxLayoutAlign="center">
+    <table mat-table [dataSource]="dataSource" matSort style="border: 1px solid rgb(204, 168, 168)">
+
+      <ng-container matColumnDef="employeeId">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="color: brown"><b> Employee Id </b></th>
+        <td mat-cell *matCellDef="let element" style="color: brown"> <b>{{element.employeeId}} </b></td>
+      </ng-container>
+
+      <ng-container matColumnDef="employeeImage">
+        <th mat-header-cell *matHeaderCellDef style="color: brown"><b> Employee Image </b></th>
+        <td mat-cell *matCellDef="let element"><img mat-card-image src="{{element.employeeImage}}" alt="Photo of product" style="height: 80px ;width: 120px;padding: 5px"> </td>
+      </ng-container>
+
+      <ng-container matColumnDef="employeeName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="color: brown"> <b>Employee Name </b></th>
+        <td mat-cell *matCellDef="let element"> {{element.employeeName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="employeeAge">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="color: brown"> <b>Employee Age</b> </th>
+        <td mat-cell *matCellDef="let element"> {{element.employeeAge}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="employeeAddress">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header style="color: brown"> <b>Employee Address</b> </th>
+        <td mat-cell *matCellDef="let element"> {{element.employeeAddress}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="employeeEdit">
+        <th mat-header-cell *matHeaderCellDef style="color: brown"><b>Edit Employee</b> </th>
+        <td mat-cell *matCellDef="let element"><button mat-button (click)= "openEditEmployeeDialog(element)" class="editBtn"> <i class="material-icons">create</i></button></td>
+      </ng-container>
+
+      <ng-container matColumnDef="employeeDelete">
+        <th mat-header-cell *matHeaderCellDef style="color: brown"><b> Delete Employee </b></th>
+        <td mat-cell *matCellDef="let element"><button mat-button (click)="confirmDeleteEmployee(element)" class="deleteBtn"><i class="material-icons">delete_sweep</i></button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+</div>
+<div>
+      <div style="width: 100%"> 
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons ></mat-paginator>
+      </div>
+
+</div>

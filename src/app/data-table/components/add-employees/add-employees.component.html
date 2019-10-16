@@ -1,0 +1,47 @@
+
+  <h1 style="text-align: center; color: brown ">Add another employee here :</h1>
+
+  <form [formGroup]="signupForm" (ngSubmit)="employeeSubmit(signupForm)" (ngSubmit)="onNoClick()" (ngSubmit)="openSnackBar(message='Add table row successfully', action='Done')">
+      <div class="example-container">
+
+        <mat-form-field appearance="outline" style="width: 80% ;" hintLabel="Max 5 numbers">
+          <mat-label>Employee Id</mat-label>
+          <input matInput #id  formControlName="employeeId" ngModel placeholder="Enter employee id" maxlength="5" pattern="[0-9]{0,5}">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint align="end">{{id.value?.length || 0}}/5</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 80% ;" hintLabel="Max 20 character">
+          <mat-label>Employee Name</mat-label>
+          <input matInput #input type="text"  formControlName="employeeName" placeholder="Enter employee name" maxlength="20" >
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint align="end">{{input.value?.length || 0}}/20</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 80% ;" hintLabel="Max 3 number">
+          <mat-label>Employee Age</mat-label>
+          <input matInput #age   formControlName="employeeAge" placeholder="Enter employee age" maxlength="3" pattern="[0-9]{0,5}">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint align="end">{{age.value?.length || 0}}/3</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 80% ;" hintLabel="Max 20 character">
+          <mat-label>Employee Address</mat-label>
+          <input matInput #address type="text"  formControlName="employeeAddress" placeholder="Enter employee address" maxlength="20" >
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint align="end">{{address.value?.length || 0}}/20</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width: 80% ;">
+          <mat-label>Employee Image</mat-label>
+          <input matInput type="text"  formControlName="employeeImage" placeholder="Enter employee igame" >
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <div class="example-button-row">
+          <button mat-stroked-button   class="submitBtn" type="submit">Submit</button>
+          <button mat-stroked-button mat-dialog-close class="closeBtn">Cancel</button>
+        </div> 
+      </div>
+  </form>
+

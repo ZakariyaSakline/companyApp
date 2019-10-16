@@ -1,0 +1,40 @@
+
+
+<!-- <div fxLayout fxLayoutAlign="center" >
+    <mat-form-field appearance="outline" style="width: 80%; padding: 2% ;">
+      <mat-label style="color:rgb(28, 139, 130)">Search for Employee </mat-label>
+      <input matInput  (keyup)="applyFilter($event.target.value)" placeholder="Filter here" >
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+  </div> -->
+
+
+<div fxLayout="row wrap" fxLayout.lt-sm="column"   style="padding: 2%; justify-content:center;">
+  <div *ngFor='let employee of employeeInfo' >
+      <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title><b>{{employee.name}}</b></mat-card-title>
+            <mat-card-subtitle>
+              <h3 style="color: brown">Id : {{employee.id}}</h3>
+            </mat-card-subtitle>
+          </mat-card-header>
+         <a  (click)="openEmployeeDetailsDialog(employee)" class="photoClick"> <img mat-card-image src="{{employee.photo}}" alt="Photo" style="max-height :150px"></a>
+          <mat-card-content>
+              <h4>
+                    <address style="color:rgb(28, 139, 130)">
+                      Phone Number :{{employee.phone}}<br>
+                      Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br> 
+                      Age :{{employee.age}}<br>
+                      Address : {{employee.address}}<br>
+                      Email : {{employee.email}}
+                    </address>
+              </h4>      
+          </mat-card-content>
+          <mat-card-actions>
+          </mat-card-actions>
+        </mat-card>
+  </div>
+</div>
+    
+      

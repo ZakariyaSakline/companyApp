@@ -1,0 +1,15 @@
+.example-card {
+    max-width: 300px;
+    margin: 5%;
+    }
+  
+  .example-header-image {
+    background-image: url('https://dazlynconsultants.com/wp-content/uploads/2019/04/000782-link-3D-logo-design-online-free-3d-logo-maker-03.png');
+    background-size: cover;
+  }
+  .photoClick{
+    cursor: pointer;
+  }
+  .photoClick:hover{
+    opacity: 0.5;
+  }

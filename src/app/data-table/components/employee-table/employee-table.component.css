@@ -1,0 +1,35 @@
+.container{
+    height: 50px;
+  }
+  .item-2{
+    background-color: black;
+    color: white;
+  }
+  .btn:hover{
+      background-color: yellow;
+      color: black;
+    }
+    .btn{
+      padding: 7px;
+      transition: 0.5s;
+
+    }
+
+  table {
+    width: 100%;
+  }
+  .editBtn{
+    color: blue;
+    transition: 0.6s;
+  }
+  .editBtn:hover{
+    background-color: gray;
+  }
+  .deleteBtn{
+    color: red;
+    transition: 0.6s;
+  }
+  .deleteBtn:hover{
+    background-color: gray;
+  }
+ 

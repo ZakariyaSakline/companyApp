@@ -1,0 +1,39 @@
+
+
+  <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title><b>{{data.name}}</b></mat-card-title>
+      </mat-card-header>
+      <mat-card-subtitle>
+        </mat-card-subtitle>
+     <a   class="photoClick"> <img mat-card-image src="{{data.photo}}" alt="Photo" ></a>
+      <mat-card-content>
+          <h4>
+                <address style="color:rgb(28, 139, 130)">
+                  Phone Number :{{data.phone}}<br>
+                  Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br> 
+                  Age :{{data.age}}<br>
+                  Address : {{data.address}}<br>
+                  Email : {{data.email}}
+                </address>
+          </h4>      
+          <h2>About:</h2>
+          <h3>1. Be proud:</h3>
+          <p>One major goal of the self-evaluation is to highlight your accomplishments and recollect 
+            milestones in your professional development. A good self-assessment should point to 
+            specific tasks and projects that highlight your best work.</p>
+          <h3>2. Be honest and critical:</h3>  
+          <p>Self-assessments aren't just about highlighting triumphs. You should also critically assess
+             the times you came up short. Being honest means pointing out weaknesses that could be improved 
+             upon or past failures that taught you a valuable lesson. Recognizing your own flaws is important
+              to demonstrating your ability to learn and grow.</p>
+          <h3>3. Continuously strive for growth:</h3>   
+          <p>It's important during self-assessments to never stagnate; humans are constantly adapting, 
+            learning and changing. Whether you've had a great year or fallen short of your own 
+            expectations, it's important to remain committed to improving and educating yourself. </p> 
+      </mat-card-content>
+      <mat-card-actions>
+          <button mat-stroked-button mat-dialog-close class="closeBtn">Cancel</button>
+      </mat-card-actions>
+    </mat-card>
